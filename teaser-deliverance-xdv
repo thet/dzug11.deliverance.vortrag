@@ -1,0 +1,15 @@
+XSLT neu gedacht: Theming mit Deliverance/XDV
+=============================================
+
+Theming mit Deliverance/XDV
+===========================
+
+Bei der Gestaltung für Webanwendungen können die Designer oft nicht unabhängig von den Anwendungsentwicklern arbeiten, obwohl ihre unterschiedlichen Aufgaben eine solche Trennung zulassen würden. Zudem müssen sie sich oft dennoch mit der Templatesprache und dem Deployment der Anwendung auseinandersetzen.
+
+Deliverance löst dieses Problem, indem es die Implementierung des Webdesigns weitgehend von der Webanwendung trennt. Die Software verwendet XSL-Transformationen, um das eigene Aussehen der Anwendung in ihr Design zu verwandeln.
+
+Der Vortrag behandelt Deliverance und das Schwesterprojekt XDV, geht auf Implementierung und Deployment ein und bespricht den sich ergebenden Entwicklungsprozess.
+
+###
+Johannes Raggam beschäftigt sich 2002 mit Webentwicklung - seit jeher in Zusammenarbeit mit dezidierten Webdesignern. Er hatte erste Kontakte mit Zope seit 2002 und entwickelt seit 2005 mit Plone. Deliverance setzt er seit 2009 ein und spricht seitdem darüber als Revolution im Webentwicklungsprozess.
+###

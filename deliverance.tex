@@ -1,0 +1,142 @@
+Website Theming mit Deliverance und XDV
+=======================================
+
+% TODO: graphik - beispiel - 4 Folien
+
+Inhalt des Vortrags
+
+Das Problemfeld: Websitegestaltung aktuell
+
+    Notwendiges Wissen
+        HTML
+        CSS
+        Javascript
+
+        Deploymentprozess
+            SVN, GIT, ...
+        Templatemechanismus des Frameworks
+            ZPT, Smarty, PHP, JSP, ...
+
+        Unterschiedliche Systeme - Unterschiedliche Techniken
+        Wissen über Zielsystem muss vorhanden sein
+
+    Workflow
+        Designteam: HTML Dummy Template
+        Entwicklungsteam - Zusatzaufgaben: Integration in Zielsystem, Veröffentlichung.
+        Wasserfallmodell - Nachbesserungen für Designteam ist nachfolgend mühsam. Entwicklungsteam muss für Designänderungen immer kontaktiert werden.
+
+    % TODO: graphik - Beispiel Plone
+
+
+Was ist Deliverance?
+    Theming Engine
+        Basiert auf Konzepten von XSLT - Ursprünglich war es ein XSLT compiler
+        Einfache Regeln beschreiben Transformation
+        Basiert auf einer Idee von Paul Everitt aus dem Jahr 2005
+
+    Middlewaretool, Proxy % TODO: Graphik Systemskizze Cachingserver, Webserver, Deliverance, CMS System
+
+    HTML Transformation durch Mapping von Elementen % TODO: graphik ~ mapping
+        Inhalte aus CMS System werden in Platzhalter von HTML Template gemappt
+        Ähnlich XSL Transformationen
+        Aus Content, Theme und XML Datei mit Regelanweisungen wird neues Dokument generiert
+        Theme und Content müssen werden dabei nicht verändert
+        Valides HTML und eindeutig selektierbare (CSS/XPath) Elemente notwendig
+
+    Trennung der Präsentation von Inhalt und Logik
+        Viel saubere Trennung als mit Templatesprachen meistens umgesetzt
+
+    Notwendiges Wissen
+        HTML
+        CSS
+        Tools wie Firebug
+        Aufbau der XML Rules Datei
+
+    Unterschiedliche Systeme mit einer Software themen
+        Einheitliches Layout mit einem HTML Theme möglich
+        Alle Resourcen (Content, Theme) können per HTTP geholt werden
+        Einfache Web-Mashups
+
+Deliverance Regeln
+    drop
+        <drop content="SELEKTOR" /> | <drop theme="SELEKTOR" />
+    replace
+        <replace content="SELEKTOR" theme="SELEKTOR" />
+    prepend
+        <prepend content="SELEKTOR" theme="SELEKTOR" />
+    append
+        <prepend content="SELEKTOR" theme="SELEKTOR" />
+
+Deliverance Selektoren
+    CSS 3 Selektoren
+        #content, .header, div[href~='.kss']
+    XPath
+        /html/head/title
+        /html/body/div[1]/a[3]
+    Selektor Typen
+        element
+        children
+        attribute
+        ...
+    % Ruleset, Theme, Proxy, Rules, Classes, Matches
+
+
+Aufbau der Deliverance Konfiguration
+    % easy rules.xml beispiel
+
+
+Deliverance Deployment
+    Proxy Server
+    WSGI Middleware
+    Transformationen werden bei jedem Zugriff neu erstellt
+    Caching Proxy von Vorteil
+
+
+Grenzen von Deliverance
+    Keine Schleifen-Konstrukte.
+        Bsp: Variable Anzahl von <li> Elementen aus Menü kann nicht sinnvoll in ein anderes Konstrukt im Theme gemappt werden.
+    Kleinteilige Layoutarbeiten können schneller in Templatesprache umgesetzt werden
+        Bsp: Layoutänderungen in Plone im content-core. Anordnung von Artikel-Elementen, Folder Listings, etc.
+
+    <---> XDV: Unterstützt Inline-XSL
+
+Warum trotzdem Deliverance?
+
+Der Deliverance Workflow
+    Designteam
+        Erstellt HTML Theme und CSS Dateien, ev. JS
+        Kann rules.xml editieren
+        Bei Zugriff auf Entwicklungs- bzw Produktivserver keine Interaktion mit Entwicklungsteam notwendig
+
+    Entwicklungsteam
+        Umsetzen von kleinteiligen Layoutarbeiten (content-core)
+        Erstellung rules.xml
+
+    System Admin Team
+        Bereitstellen der Infrastruktur (Proxy Server)
+
+
+Case Study: Grüne Akademie Steiermark
+    % TODO: Systemskizze: Designer, Dropbox, Entwickler, Entwicklungsserver, Produktivserver, GIT
+    % TODO: Website ungethemed - Website gethemed - Website eingeloggt, gethemed
+
+
+% TODO TODO
+XDV
+    Unterschiede zu Deliverance
+        XSLT compiler
+        Regeln
+        Deployment
+        Vorteile
+        Nachteile
+
+% TODO TODO
+Performance und Skalierbarkeit
+    XDV vs Deliverance
+
+% TODO TODO
+Zukunft
+    Banjo - Web based Deliverance Rule Editing
+
+
+#
