@@ -18,6 +18,7 @@
     \item Plone Entwicklung seit 2005
     \item Deliverance User seit 2009
     \item Mitglied der BlueDynamics Alliance
+    \item Web: \url{http://johannes.raggam.co.at/}
     \end{itemize}
 }
 
@@ -201,6 +202,24 @@ $<$replace href="http://twitter.com/dzugtagung"\\
     \end{itemize}
 }
 
+\subsection{Lösung? Deliverance. XDV.}
+\frame {
+    \frametitle{Workflow mit Deliverance}
+    \begin{itemize}
+    \item Designteam
+        \begin{itemize}
+        \item HTML Theme, CSS, JS
+        \item eventuell rules.xml
+        \item Ideal: selbstständiges Deployment
+        \end{itemize}
+    \item Entwicklungsteam
+        \begin{itemize}
+        \item Kleinteilige Layoutarbeiten
+        \item rules.xml
+        \end{itemize}
+    \end{itemize}
+}
+
 
 \subsection{Entwicklungsgeschichte}
 \frame {
@@ -223,8 +242,15 @@ $<$replace href="http://twitter.com/dzugtagung"\\
     \frametitle{Was ist Deliverance?}
     \begin{itemize}
     \item Theming Engine für unterschiedliche Plattformen
+        \begin{itemize}
+        \item Einheitliches Layout fürverschiedene Applikationen (bsp Plone und Wordpress)
+        \item Einfache Mashups: Inhalte können durch \texttt{href} Attribut referenziert werden.
+        \end{itemize}
     \item HTML Transformation durch Mapping von Elementen
     \item Trennung Präsentation - Inhalt
+        \begin{itemize}
+        \item Verbesserter Workflow Designteam - Entwicklerteam
+        \end{itemize}
     \end{itemize}
 }
 
@@ -241,7 +267,6 @@ $<$replace href="http://twitter.com/dzugtagung"\\
         {\scriptsize\texttt{$<$append content="SELEKTOR" theme="SELEKTOR" $/>$}}
         \item \textbf{prepend}: {\small{Fügt Element aus Content in Theme am Anfang hinzu}}
         {\scriptsize\texttt{$<$prepend content="SELEKTOR" theme="SELEKTOR" $/>$}}
-        \item \texttt{content} kann durch \texttt{href} Attribut referenziert werden
     \end{itemize}
 }
 
@@ -253,7 +278,7 @@ $<$replace href="http://twitter.com/dzugtagung"\\
         \begin{itemize}
         \item \#content, .header, div[href='.kss']
         \end{itemize}
-    \item CSS 3 Selektoren
+    \item XPATH Selektoren
         \begin{itemize}
         \item /html/head/title
         \item /html/body/div[1]/a[3]
