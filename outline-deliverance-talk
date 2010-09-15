@@ -58,8 +58,8 @@ Theming mit Deliverance/XDV
         Selektor Typen
             element
             children
+            tag
             attribute
-            ...
 
         # Ruleset
         # Theme

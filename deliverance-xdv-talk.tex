@@ -1,0 +1,52 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{beamerthemesplit}
+
+
+\usepackage[absolute]{textpos}
+\setlength{\TPHorizModule}{1mm}
+\setlength{\TPVertModule}{\TPHorizModule}
+\textblockorigin{0mm}{0mm}
+
+
+\usepackage{textcomp}
+
+\definecolor{nicegreen}{rgb}{0.47, 0.72, 0.00}
+\definecolor{nicegrey}{rgb}{0.89, 0.89, 0.90}
+\definecolor{bdablue}{rgb}{0.15, 0.15, 0.50}
+\definecolor{bdared}{rgb}{0.90, 0.09, 0.09}
+%\setbeamercolor{normal text}{bg=fhgreen}
+
+\usecolortheme[named=nicegreen]{structure}
+%\useoutertheme{infolines}
+\setbeamertemplate{navigation symbols}{} %no nav symbols
+\setbeamertemplate{items}[square]
+
+
+
+\logo{\includegraphics[scale=0.3]{resources/bda-logo}}
+
+% START
+\title{Website Theming mit Deliverance und XDV}
+\author[Johannes Raggam]{Johannes Raggam}
+\institute[BDA]{11. DZUG-Tagung 2010\\
+15. bis 17. September 2010\\
+Dresden
+}
+\date[September 2010]{15.09.2010}
+
+
+
+\begin{document}
+\shorthandoff{"} % Let the usage of normal quotation marks
+\frame{ \titlepage }
+
+\include{deliverance-xdv-talk-content}
+
+
+
+\end{document}
+
+
+% END OF DOCUMENT
